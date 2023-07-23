@@ -1,0 +1,28 @@
+class Solution{
+    public:
+    
+    int ans=0;
+    
+    int solve(string S1, string S2, int n, int m){
+        if(n==0 || m==0) return 0;
+        
+        int text=0;
+        
+        if(S1[n-1] == S2[m-1]) {
+           text = 1+solve(S1, S2, n-1, m-1);
+            ans  = max(ans, text);
+        }
+        else{
+        solve(S1, S2, n, m-1);
+        solve(S1, S2, n-1, m);
+        }
+        return text;
+        
+    }
+    
+    int longestCommonSubstr (string S1, string S2, int n, int m)
+    {
+        solve(S1, S2, n, m);
+        return ans;
+    }
+};
