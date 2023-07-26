@@ -1,0 +1,14 @@
+int arr={1,2,3,4}
+target = 4
+
+f(ind,target){
+if(target==0) return true;
+if(ind==0) return (arr[0]==target);
+
+int notTake = f(ind-1,target);
+int take = false;
+if(arr[ind]<=target)
+take = f(ind-1,target-arr[ind]);
+
+return take||notTake;
+}
