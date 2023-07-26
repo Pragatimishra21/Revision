@@ -1,0 +1,5 @@
+f(ind,target)
+{
+if(target==0) return 1;
+if(ind==0) return(arr[ind]==target);
+
