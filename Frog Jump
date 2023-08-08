@@ -1,0 +1,10 @@
+Recursive:
+f(ind,height)
+{
+ if(ind==0) return 0;
+int jumpone = f(ind-1,height) + abs(height[ind] - height[ind-1]);
+if(ind>1)
+int jumpTwo = f(ind-2,height) + abs(height[ind] - height[ind-2]);
+
+return min(jumpone,jumpTwo);
+}
