@@ -1,0 +1,18 @@
+class Solution {
+  public:
+    int completeRows(int n) {
+       int rows = 0;
+       int temp = n;
+       for(int i=1 ; i<=n ; i++)
+       {
+        if(temp-i >=0) 
+        {
+            rows++;
+            temp = temp-i;
+        }
+        else
+        break;
+       }
+       return rows;
+    }
+};
