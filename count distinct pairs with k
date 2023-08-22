@@ -1,0 +1,24 @@
+class Solution{
+	public:
+	int TotalPairs(vector<int>nums, int k){
+	    // Code here
+	    int n = nums.size();
+	    int count = 0;
+	    unordered_map<int,int> mpp;
+	    for(int i=0 ; i<n ; i++)
+	    {
+	        mpp[nums[i]]++;
+	    }
+	    for(int i=0 ; i<n ; i++)
+	    {
+	        int y = nums[i]+k;
+	        if(k==0 && mpp[y]>1 || k!=0 && mpp[y])
+	        {
+	          count++;
+	          mpp.erase(y);
+	        }
+	    }
+	    return count;
+	}
+
+};
