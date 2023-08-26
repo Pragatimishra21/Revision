@@ -1,0 +1,19 @@
+class Solution
+{
+    public:
+    //Function to check if the linked list has a loop.
+    bool detectLoop(Node* head)
+    {
+     unordered_map<Node* , int> mpp;
+     Node *temp = head;
+     while(temp!=NULL)
+     {
+         if(mpp.find(temp) != mpp.end())
+         return true;
+         else
+         mpp[temp]++;
+         temp = temp->next;
+     }
+     return false;
+    }
+};
