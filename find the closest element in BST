@@ -1,0 +1,18 @@
+class Solution
+{
+    public:
+    //Function to find the least absolute difference between any node
+	//value of the BST and the given integer.
+    int minDiff(Node *root, int k)
+    {
+    int res= INT_MAX;
+    while(root)
+    {
+     res = min(res , abs(k-root->data));
+     if(k==root->data) return 0;
+     else if (k < root->data) root = root->left;
+     else root = root->right;
+    }
+    return res;
+    }
+};
