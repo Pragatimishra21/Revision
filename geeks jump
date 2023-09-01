@@ -1,0 +1,18 @@
+class Solution {
+  public:
+    int helper(vector<int>& height, int n)
+    {
+        if(n==0) return 0;
+        int b = INT_MAX;
+        int a = helper(height , n-1)+ abs(height[n] - height[n-1]);
+        
+        if(n>1)
+        b = helper(height , n-2) + abs(height[n] - height[n-2]);
+        
+        return min(a, b);
+    }
+  
+    int minimumEnergy(vector<int>& height, int n) {
+        return helper(height , n-1);
+    }
+};
